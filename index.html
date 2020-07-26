@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/three.min.js"></script>
+	<script src="js/panolens.min.js"></script>
+	<style>
+		#pano-iamge {
+			width: 100vw;
+			height: 100vh;
+		}
+	</style>
+</head>
+<body>
+	<div id="pano-iamge"></div>
+
+	<script>
+		const panoImage = document.querySelector('#pano-iamge');
+
+		const panorama = new PANOLENS.ImagePanorama('images/360.jpg');
+		const viewer = new PANOLENS.Viewer({
+			container: panoImage,
+			autoRotate: true,
+			autoRotateSpeed: 0.2
+		});
+
+		viewer.add(panorama);
+
+	</script>
+</body>
+</html>
